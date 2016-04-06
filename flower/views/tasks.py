@@ -63,10 +63,11 @@ class TasksDataTable(BaseHandler):
 
     def format_task(self, args):
         uuid, task = args
-        custom_format_task = self.application.options.format_task
+        from flower.utils.template import humanize
 
-        if custom_format_task:
-            task = custom_format_task(copy.copy(task))
+        task.args = humanize(task.args, length=100)
+        #task.kwargs.pop('credit_card_number')
+        task.result = humanize(task.result, length=100)
         return uuid, task
 
 
