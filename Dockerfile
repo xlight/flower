@@ -11,5 +11,5 @@ RUN cd /tmp; wget https://raw.github.com/pypa/pip/master/contrib/get-pip.py;\
 RUN apt-get install -y python-pip
 
 # add flower
-RUN pip install redis flower
+RUN pip install redis https://github.com/mher/flower/zipball/master
 
