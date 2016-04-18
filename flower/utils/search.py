@@ -1,5 +1,7 @@
 import re
-
+import sys
+reload(sys)
+sys.setdefaultencoding('utf8')
 
 def parse_search_terms(raw_search_value):
     search_regexp = r'(?:[^\s,"]|"(?:\\.|[^"])*")+'  # splits by space, ignores space in quotes
